@@ -197,6 +197,16 @@ h1, h2, h3, h4, h5, h6 {
     padding-left: 180px;
 }
 
+.logo {
+    animation: zoomIn 1s;
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale3d(0, 0, 0);
+    }
+}
+
 .footer {
     padding-top: 10px;
     padding-bottom: 10px;
@@ -217,4 +227,118 @@ h1, h2, h3, h4, h5, h6 {
 
 .footer__copyright {
     color: #6A6A6A;
+}
+
+@media (max-width: 1024px) {
+    .mute {
+        right: 20px;
+    }
+
+    .main__index {
+        padding-left: 60px;
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+        display: flex;
+        align-items: center;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .burger {
+        display: block;
+        width: 20px;
+        height: 12px;
+        background-color: transparent;
+        background-image: url('../image/burger.svg');
+        border: none;
+    }
+
+    .navigation {
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        width: 240px;
+        background-color: #260707;
+        flex-direction: column;
+        justify-content: flex-start;
+        padding-top: 90px;
+        text-align: center;
+        align-items: stretch;
+        transform: translateX(-240px);
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .navigation_active {
+        transform: translateX(0);
+    }
+
+    .navigation__list {
+        flex-direction: column;
+        margin-right: 0;
+        gap: 6px;
+        margin-bottom: 6px;
+    }
+
+    .navigation__link {
+        padding-top: 12px;
+        padding-bottom: 12px;
+    }
+
+    .header__hashtag {
+        margin: 0;
+        margin-bottom: 40px;
+    }
+
+    .navigation__close {
+        position: absolute;
+        display: block;
+        top: 20px;
+        left: 20px;
+        width: 16px;
+        height: 16px;
+        background-color: transparent;
+        background-image: url('../image/close.svg');
+        border: 0;
+    }
+
+    .social {
+        justify-content: center;
+    }
+
+    .main__index {
+        padding-left: 30px;
+    }
+
+    .logo{
+        width: 230px;
+    }
+
+    .footer {
+        padding-left: 20px;
+        padding-right: 20px;
+        text-align: center;
+    }
+}
+
+@media (max-width: 580px) {
+    .main__index {
+        background-image: linear-gradient(0.11deg, rgba(0, 0, 0, 0.76) 32.14%, rgba(255, 0, 0, 0) 72.56%), url('../image/bg-small.jpg');
+        align-items: flex-end;
+        justify-content: center;
+        padding-bottom: 64px;
+        padding-left: 0;
+    }
+
+    .logo {
+        width: 125px;
+    }
+
+    .footer {
+        font-size: 6px;
+        line-height: 7px;
+    }
 }
