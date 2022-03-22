@@ -212,7 +212,7 @@ h1, h2, h3, h4, h5, h6 {
 .footer {
     position: relative;
     z-index: 500;
-    height: 70px;
+    height: 50px;
     padding-top: 10px;
     padding-bottom: 10px;
     display: flex;
@@ -242,8 +242,14 @@ h1, h2, h3, h4, h5, h6 {
     height: 100%;
 }
 
+.slider-main__img {
+    object-fit: cover;
+}
+
 .main_slider {
-    height: calc(100% - 120px);
+    height: calc(100% - 100px);
+    /* overflow: hidden; */
+    padding-bottom: 10px;
 }
 
 .slider-main__item {
@@ -259,6 +265,11 @@ h1, h2, h3, h4, h5, h6 {
     object-fit: contain;
 }
 
+.slider-thumbs__img {
+    max-height: 100px;
+    object-fit: cover;
+}
+
 .pagination {
     padding-left: 20px;
     padding-right: 20px;
@@ -269,9 +280,15 @@ h1, h2, h3, h4, h5, h6 {
     right: 0;
     padding-bottom: 15px;
     width: 100%;
-    /* min-height: 144px; */
+    min-height: 144px;
     background-color: #000;
     padding-top: 12px;
+    transform: translateY(calc(100% - 20px));
+    transition: transform 0.5s ease-in-out;
+}
+
+.paginaion_active {
+    transform: translateY(0);
 }
 
 .pagination__arrow {
@@ -281,13 +298,23 @@ h1, h2, h3, h4, h5, h6 {
     height: 0;
     border-left: 7px solid transparent;
     border-right: 7px solid transparent;
-    border-top: 7px solid #fff;
-    border-bottom: 7px solid transparent;
+    border-top: 6px solid transparent;
+    border-bottom: 6px solid #fff;
     background-color: transparent;
     transition: border-color 0.3s ease-in-out;
 }
 
+.paginaion_active .pagination__arrow {
+    border-top: 6px solid #fff;
+    border-bottom: 6px solid transparent;
+}
+
 .pagination__arrow:hover {
+    border-bottom-color: #E90000;
+}
+
+.paginaion_active .pagination__arrow:hover {
+    border-bottom-color: transparent;
     border-top-color: #E90000;
 }
 
@@ -340,6 +367,7 @@ h1, h2, h3, h4, h5, h6 {
 
     .navigation_active {
         transform: translateX(0);
+        z-index: 600;
     }
 
     .navigation__list {
